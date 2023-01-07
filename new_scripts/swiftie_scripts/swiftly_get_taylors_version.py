@@ -36,7 +36,7 @@ def get_args():
         "-p",
         "--playlist_id",
         required=False,
-        help="URI for playlist you would like to update",
+        help="URI for playlist you would like to update. If left blank, all of the Spotify playlists you own will be updated.",
     )
     return parser.parse_args()
 
