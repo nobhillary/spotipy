@@ -33,6 +33,12 @@ def get_args():
         description="SWIFTLY updates user playlists with Taylor's Version of songs (where applicable)"
     )
     parser.add_argument(
+        "-u",
+        "--username",
+        required=False,
+        help="Spotify username"
+    )
+    parser.add_argument(
         "-p",
         "--playlist_id",
         required=False,
@@ -195,7 +201,10 @@ def replace_tracks(mapping_df, playlist_id, username):
 def main():
     args = get_args()
     artist = "Taylor Swift"
-    username = input("Enter your spotify username")
+    if args.username is None:
+        username = input("Enter your spotify username")
+    else:
+        username = args.username
     username = str(username)
 
     # Create mapping of stolen versions to Taylor's Versions
