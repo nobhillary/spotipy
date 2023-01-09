@@ -32,6 +32,9 @@ def get_args():
         "-a", "--artist", required=False, default="Taylor Swift", help="Name of Artist"
     )
     parser.add_argument(
+        "-u", "--username", required=False, default=None, help="Spotify username"
+    )
+    parser.add_argument(
         "-o",
         "--output_dir",
         required=False,
